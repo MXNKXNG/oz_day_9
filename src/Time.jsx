@@ -6,14 +6,14 @@ export default function Time() {
 
     useEffect(() => {
 
-        const now = setTimeout(() => {
+        const now = setInterval(() => {
             setNowDate(new Date())
         }, 1000)
 
         return (() => {
-            clearTimeout(now)
+            clearInterval(now)
         }) 
-    }, [nowDate])
+    }, [])
 
 
     return <div className="time">{`${nowDate.getFullYear()}년 ${nowDate.getMonth()+1}월 ${nowDate.getDate()}일 ${week[nowDate.getDay(week)]}`}</div>
